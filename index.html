@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naturaleza Encendida · Alojamientos colaboradores</title>
+<meta name="description" content="20 % de descuento en la entrada Premium para huéspedes de alojamientos colaboradores. Sevilla y Córdoba.">
+<link rel="icon" href="https://www.naturalezaencendida.com/wp-content/uploads/2025/08/cropped-favicon_NE_Black_441fb36a74-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Jost: alternativa libre a Futura PT (la tipografía de naturalezaencendida.com). Si la landing se aloja en su web, se puede cambiar por "Futura PT". -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --ink:#222220;          /* fondo general de su web */
+  --ink-2:#2c2c29;
+  --red:#B20000;          /* Sevilla · Carmen */
+  --red-d:#730202;
+  --purple:#3B0870;       /* Córdoba · Navegantes */
+  --purple-d:#23003E;
+  --yellow:#FFD702;       /* botones de su web */
+  --white:#fff;
+  --muted:rgba(255,255,255,.78);
+  --line:rgba(255,255,255,.14);
+  --font:"Futura PT","Jost","Noto Sans SC","Noto Sans JP","PingFang SC","Hiragino Sans","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--white);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-weight:800;line-height:1.12}
+h2{font-size:clamp(1.6rem,4.6vw,2.1rem);text-transform:uppercase;text-align:center;margin-bottom:10px}
+.spaced{letter-spacing:.32em;text-transform:uppercase;font-weight:600}
+.eyebrow{display:block;text-align:center;font-size:.8rem;color:var(--yellow);margin-bottom:10px}
+.sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px}
+section{padding:68px 0}
+
+/* ---------- Header ---------- */
+header.top{position:sticky;top:0;z-index:30;background:var(--black)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo img{height:30px;width:auto}
+.logo .txt{display:none;font-weight:800;line-height:.95;font-size:.95rem;text-transform:uppercase}
+.lang{position:relative}
+.lang select{
+  appearance:none;-webkit-appearance:none;background:transparent;color:var(--white);
+  border:1px solid var(--line);border-radius:50px;padding:8px 34px 8px 14px;
+  font:600 .9rem var(--font);cursor:pointer;
+}
+.lang select option{color:#000}
+.lang::after{content:"▾";position:absolute;right:13px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:.8rem}
+.bar{background:var(--red);text-align:center;font-size:.85rem;font-weight:600;padding:8px 16px;text-transform:uppercase;letter-spacing:.04em}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:78svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;isolation:isolate;background:#050505 url("https://www.naturalezaencendida.com/wp-content/uploads/2026/05/6-768x486.png") center/cover no-repeat}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.55) 60%,var(--ink))}
+.hero .wrap{padding-top:56px;padding-bottom:56px}
+.hero .kicker{font-size:.82rem;margin-bottom:18px;display:block}
+.hero h1{font-size:clamp(2.1rem,7vw,4rem);text-transform:uppercase;max-width:16ch;margin:0 auto;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero p{font-size:clamp(1.02rem,2.4vw,1.2rem);max-width:560px;margin:18px auto 30px;color:var(--white);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:8px;border-radius:50px;padding:13px 26px;font:700 .95rem var(--font);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s,filter .15s;text-transform:uppercase;letter-spacing:.02em}
+.btn:active{transform:scale(.97)}
+.btn.y{background:var(--yellow);color:#000}
+.btn.y:hover{filter:brightness(1.06)}
+.btn.o{background:transparent;color:var(--white);border-color:var(--white)}
+.btn.o:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- Tipos de entrada (estilo de su web) ---------- */
+.tickets{background:linear-gradient(var(--red),var(--red-d))}
+.tgrid{display:grid;gap:18px;grid-template-columns:1fr;max-width:460px;margin:0 auto}
+.tcard{position:relative;background:rgba(0,0,0,.22);border-radius:20px;padding:30px 24px 26px}
+.tcard.prem{background:rgba(0,0,0,.38);outline:2px solid var(--yellow)}
+.pill{display:inline-block;background:var(--yellow);color:#000;font-weight:700;font-size:.85rem;padding:6px 16px;border-radius:50px;margin-bottom:18px}
+.tcard ul{list-style:none;display:grid;gap:10px}
+.tcard li{display:flex;gap:10px;align-items:flex-start}
+.tcard li b{color:var(--yellow);font-size:1.1rem;line-height:1.3}
+.tcard li.no{opacity:.6}
+.tcard li.no b{color:var(--white)}
+.badge{position:absolute;top:-14px;right:18px;background:var(--white);color:var(--red-d);font-weight:800;font-size:.78rem;text-transform:uppercase;padding:6px 12px;border-radius:50px;box-shadow:0 6px 18px rgba(0,0,0,.25);max-width:calc(100% - 36px)}
+
+/* ---------- Cómo funciona ---------- */
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{background:var(--ink-2);border-radius:20px;padding:26px 22px;text-align:center}
+.step .n{width:46px;height:46px;border-radius:50%;background:var(--yellow);color:#000;font-weight:800;font-size:1.2rem;display:grid;place-items:center;margin:0 auto 14px}
+.step h3{font-size:1.15rem;text-transform:uppercase;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.96rem}
+.tip{margin:26px auto 0;text-align:center;color:var(--muted);font-size:.95rem;max-width:600px}
+.tip span{color:var(--yellow)}
+
+/* ---------- Ciudades ---------- */
+.cities .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.city{border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.city.sev{background:linear-gradient(var(--red),var(--red-d))}
+.city.cor{background:linear-gradient(var(--purple),var(--purple-d))}
+.city .media{aspect-ratio:16/10;background:#111;overflow:hidden}
+.city .media img,.city .media video{width:100%;height:100%;object-fit:cover}
+.city .body{padding:24px 22px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.city .where{font-size:.78rem}
+.city h3{font-size:1.9rem;text-transform:uppercase}
+.city .venue{font-weight:600}
+.city .dates{color:var(--yellow);font-weight:600}
+.city p.desc{color:var(--muted);font-size:.96rem;flex:1}
+.city .dur{font-size:.88rem;color:var(--muted)}
+.city .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.city .btns .btn{flex:1 1 auto;padding:12px 18px;font-size:.86rem}
+
+/* ---------- Cómo comprar ---------- */
+.buysteps{list-style:none;counter-reset:b;display:grid;gap:12px;max-width:760px;margin:30px auto 0}
+.buysteps li{counter-increment:b;display:flex;gap:16px;align-items:flex-start;background:var(--ink-2);border-radius:18px;padding:18px 20px}
+.buysteps li::before{content:counter(b);flex:0 0 38px;height:38px;border-radius:50%;background:var(--yellow);color:#000;font-weight:800;display:grid;place-items:center}
+.buysteps li.key{outline:2px solid var(--yellow)}
+.buysteps li span{padding-top:6px}
+.city .price{font-weight:700;font-size:1.05rem}
+.city .price s{opacity:.6;font-weight:500;margin-right:4px}
+.city .gift{font-size:.9rem;color:var(--muted)}
+
+/* ---------- Experiencia ---------- */
+.features{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-bottom:28px}
+.feature{background:var(--ink-2);border-radius:20px;padding:24px 22px}
+.feature .ic{font-size:1.6rem;margin-bottom:10px}
+.feature h3{font-size:1.08rem;text-transform:uppercase;margin-bottom:6px}
+.feature p{color:var(--muted);font-size:.95rem}
+.share{border-radius:22px;padding:40px 22px;text-align:center;background:linear-gradient(120deg,var(--red-d),var(--purple-d))}
+.share .tag{font-size:clamp(1.6rem,6vw,2.6rem);font-weight:800;color:var(--yellow);word-break:break-word;margin:6px 0 10px}
+.share p{max-width:560px;margin:0 auto;color:var(--white)}
+.share .tags2{font-weight:700;color:var(--white);opacity:.85;margin:-4px 0 14px;word-break:break-word}
+.share a{color:var(--yellow);font-weight:700;text-decoration:none}
+
+/* ---------- ¿No participa? ---------- */
+.join{background:var(--black)}
+.split{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.panel{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:12px}
+.panel .who{font-size:.75rem;color:var(--yellow)}
+.panel h3{font-size:1.3rem;text-transform:uppercase}
+.panel p{color:var(--muted);font-size:.96rem;flex:1}
+.panel .btns{display:flex;flex-wrap:wrap;gap:10px}
+.panel .btns .btn{flex:1 1 auto}
+
+/* ---------- FAQ ---------- */
+.faq .wrap{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 4px}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--yellow);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin-top:10px;font-size:.96rem}
+
+/* ---------- Footer ---------- */
+footer{background:var(--black);padding:40px 0 48px;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+footer .pres{display:flex;align-items:center;gap:12px}
+footer .pres img{height:34px;width:auto}
+footer .links{display:flex;flex-wrap:wrap;gap:16px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--yellow)}
+
+/* ---------- Modal ---------- */
+dialog{border:0;border-radius:22px;padding:0;max-width:440px;width:calc(100% - 32px);background:var(--ink);color:var(--white);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.modal{padding:26px 22px}
+.modal h3{font-size:1.25rem;text-transform:uppercase;margin-bottom:4px}
+.modal .hint{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.msg{background:var(--white);color:#1b1b1a;border-radius:14px;padding:16px;font-size:1rem;line-height:1.5}
+.msg + .msg{margin-top:10px;font-size:.9rem;opacity:.85}
+.msg b{color:var(--red)}
+.modal .row{display:flex;gap:10px;margin-top:18px}
+.modal .row .btn{flex:1;padding:12px}
+
+@media (max-width:560px){
+  section{padding:54px 0}
+  .ctas .btn{flex:1 1 100%}
+  .hero{min-height:70svh}
+}
+@media (prefers-reduced-motion:reduce){.hero video,.city video{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo" aria-label="Naturaleza Encendida">
+      <img src="https://www.naturalezaencendida.com/wp-content/uploads/2025/08/21ad91a61f815c93e20925c2320d96f3f27ac198-1-300x72.png" alt="Naturaleza Encendida" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="txt">Naturaleza<br>Encendida</span>
+    </div>
+    <label class="lang">
+      <select id="langSel" aria-label="Idioma / Language">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="it">Italiano</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+      </select>
+    </label>
+  </div>
+</header>
+<div class="bar" data-i18n="badge"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker spaced" data-i18n="heroKicker"></span>
+    <h1 data-i18n="heroTitle"></h1>
+    <p data-i18n="heroSub"></p>
+    <div class="ctas">
+      <a class="btn y" href="#como" data-i18n="ctaHow"></a>
+      <a class="btn o" href="#ciudades" data-i18n="ctaCities"></a>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOS DE ENTRADA -->
+<section class="tickets">
+  <div class="wrap">
+    <span class="eyebrow spaced" style="color:var(--white)" data-i18n="tktEyebrow"></span>
+    <h2 data-i18n="tktTitle"></h2>
+    <p class="sub" style="color:var(--white)" data-i18n="heroSub"></p>
+    <div class="tgrid">
+      <div class="tcard prem">
+        <span class="badge" data-i18n="badge"></span>
+        <span class="pill" data-i18n="prem"></span>
+        <ul>
+          <li><b>✓</b><span data-i18n="inc1"></span></li>
+          <li><b>✓</b><span data-i18n="inc2p"></span></li>
+          <li><b>✓</b><span data-i18n="inc3"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como">
+  <div class="wrap">
+    <span class="eyebrow spaced" data-i18n="howEyebrow"></span>
+    <h2 data-i18n="howTitle"></h2>
+    <div class="steps" style="margin-top:30px">
+      <div class="step"><div class="n">1</div><h3 data-i18n="s1t"></h3><p data-i18n="s1p"></p></div>
+      <div class="step"><div class="n">2</div><h3 data-i18n="s2t"></h3><p data-i18n="s2p"></p></div>
+      <div class="step"><div class="n">3</div><h3 data-i18n="s3t"></h3><p data-i18n="s3p"></p></div>
+    </div>
+    <p class="tip"><span>★</span> <em data-i18n="tip" style="font-style:normal"></em></p>
+  </div>
+</section>
+
+<!-- CIUDADES -->
+<section id="ciudades" class="cities" style="padding-top:20px">
+  <div class="wrap">
+    <span class="eyebrow spaced" data-i18n="citiesEyebrow"></span>
+    <h2 data-i18n="citiesTitle"></h2>
+    <div class="grid" style="margin-top:30px">
+      <article class="city sev">
+        <div class="media"><img src="https://www.naturalezaencendida.com/wp-content/uploads/2026/09/img5_640x420.webp" alt="Naturaleza Encendida · Carmen · Real Alcázar de Sevilla" loading="lazy"></div>
+        <div class="body">
+          <span class="where spaced" data-i18n="sevCity"></span>
+          <h3 data-i18n="sevTitle"></h3>
+          <span class="venue" data-i18n="sevVenue"></span>
+          <span class="dates" data-i18n="sevDates"></span>
+          <span class="price js-price" data-city="sev"></span>
+          <span class="gift" data-i18n="sevGift"></span>
+          <p class="desc" data-i18n="sevDesc"></p>
+          <span class="dur" data-i18n="dur"></span>
+          <div class="btns">
+            <a class="btn y" data-link="sevPremium" target="_blank" rel="noopener" data-i18n="btnPremium"></a>
+          </div>
+        </div>
+      </article>
+      <article class="city cor">
+        <div class="media">
+          <img src="https://www.naturalezaencendida.com/wp-content/uploads/2026/05/6-768x486.png" alt="Naturaleza Encendida · Navegantes · Alcázar de los Reyes Cristianos, Córdoba" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="where spaced" data-i18n="corCity"></span>
+          <h3 data-i18n="corTitle"></h3>
+          <span class="venue" data-i18n="corVenue"></span>
+          <span class="dates" data-i18n="corDates"></span>
+          <span class="price js-price" data-city="cor"></span>
+          <p class="desc" data-i18n="corDesc"></p>
+          <span class="dur" data-i18n="dur"></span>
+          <div class="btns">
+            <a class="btn y" data-link="corPremium" target="_blank" rel="noopener" data-i18n="btnPremium"></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO COMPRAR -->
+<section id="compra" style="padding-top:20px">
+  <div class="wrap">
+    <span class="eyebrow spaced" data-i18n="buyEyebrow"></span>
+    <h2 data-i18n="buyTitle"></h2>
+    <ol class="buysteps">
+      <li><span data-i18n="b1"></span></li>
+      <li><span data-i18n="b2"></span></li>
+      <li><span data-i18n="b3"></span></li>
+      <li><span data-i18n="b4"></span></li>
+      <li class="key"><span data-i18n="b5"></span></li>
+      <li><span data-i18n="b6"></span></li>
+    </ol>
+    <p class="tip"><span>★</span> <em data-i18n="buyNote" style="font-style:normal"></em></p>
+  </div>
+</section>
+
+<!-- EXPERIENCIA + FOTOS -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <span class="eyebrow spaced" data-i18n="expEyebrow"></span>
+    <h2 data-i18n="expTitle"></h2>
+    <div class="features" style="margin-top:30px">
+      <div class="feature"><div class="ic">📸</div><h3 data-i18n="f1t"></h3><p data-i18n="f1p"></p></div>
+      <div class="feature"><div class="ic">🌍</div><h3 data-i18n="f2t"></h3><p data-i18n="f2p"></p></div>
+      <div class="feature"><div class="ic">☂️</div><h3 data-i18n="f3t"></h3><p data-i18n="f3p"></p></div>
+    </div>
+    <div class="share">
+      <div class="tag js-hashtag"></div>
+      <div class="tags2 js-citytags"></div>
+      <p class="js-share"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ¿NO PARTICIPA? -->
+<section class="join" id="unete">
+  <div class="wrap">
+    <span class="eyebrow spaced" data-i18n="joinEyebrow"></span>
+    <h2 data-i18n="joinTitle"></h2>
+    <p class="sub" data-i18n="joinSub"></p>
+    <div class="split">
+      <div class="panel">
+        <span class="who spaced" data-i18n="guestWho"></span>
+        <h3 data-i18n="guestTitle"></h3>
+        <p data-i18n="guestText"></p>
+        <div class="btns">
+          <button class="btn y" id="openMsg" data-i18n="guestMsgBtn"></button>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="who spaced" data-i18n="hostWho"></span>
+        <h3 data-i18n="hostTitle"></h3>
+        <p data-i18n="hostText"></p>
+        <div class="btns"><a class="btn y js-join" href="#" data-i18n="hostBtn"></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 data-i18n="faqTitle" style="margin-bottom:20px"></h2>
+    <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+    <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+    <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+    <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+    <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="pres">
+      <span data-i18n="presents"></span>
+      <img src="https://www.naturalezaencendida.com/wp-content/uploads/2025/09/LETSGO_blanco_72_c7a59f5690.png" alt="LETSGO" onerror="this.replaceWith(document.createTextNode('LETSGO'))">
+    </div>
+    <div class="links">
+      <a href="https://www.instagram.com/naturaleza_encendida/" target="_blank" rel="noopener">Instagram @naturaleza_encendida</a>
+      <a class="js-email" href="#"></a>
+    </div>
+  </div>
+</footer>
+
+<dialog id="msgDialog">
+  <div class="modal">
+    <h3 data-i18n="modalTitle"></h3>
+    <p class="hint" data-i18n="modalHint"></p>
+    <div class="msg js-msg-es"></div>
+    <div class="msg js-msg-en"></div>
+    <div class="row">
+      <button class="btn o" id="copyMsg" data-i18n="copy"></button>
+      <button class="btn y" id="closeMsg" data-i18n="close"></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN — revisar antes de publicar
+   ========================================================= */
+const CONFIG = {
+  email:   "comercial@naturalezaencendida.com",        // email de adhesión de alojamientos
+  hashtag: "#NaturalezaEncendida",                      // hashtag oficial (Instagram @naturaleza_encendida)
+  cityTags: "#NaturalezaEncendidaSevilla · #NaturalezaEncendidaCórdoba",
+  prices: { sev: 22, cor: 14 },
+  fees:   { sev: 0,  cor: 2 },     // ← gastos de gestión de Fever por entrada (€)   // ← precio de la entrada Premium en Fever (€). Revisar si cambia.
+  discount: 0.20,                  // 20 % con el código de huésped
+  links: {                                              // enlaces de compra de la entrada Premium (Fever)
+    sevPremium: "https://feverup.com/m/783873",
+    corPremium: "https://feverup.com/m/776679?c=premium-tickets-cordoba"
+  }
+};
+
+/* =========================================================
+   TEXTOS · ES EN FR DE IT ZH JA
+   ========================================================= */
+const T = {
+es:{
+ badge:"Para huéspedes: 20 % de descuento en la Premium",
+ heroKicker:"Sevilla · Córdoba",
+ heroTitle:"20 % de descuento en la entrada Premium",
+ heroSub:"Una ventaja exclusiva para huéspedes de alojamientos colaboradores. Pide tu código en recepción.",
+ ctaHow:"Cómo conseguirla", ctaCities:"Ver espectáculos",
+ tktEyebrow:"Ventaja para huéspedes", tktTitle:"Premium con un 20 % de descuento",  prem:"ENTRADA PREMIUM",
+ inc1:"Entrada a Naturaleza Encendida",  inc2p:"Ingreso en franjas ampliadas de 1 hora", inc3:"Acceso preferente sin colas",
+ howEyebrow:"Cómo funciona", howTitle:"Tres pasos, sin complicaciones",
+ s1t:"Pregunta en tu recepción", s1p:"Pregunta si tu hotel, hostel o apartamento es alojamiento colaborador de Naturaleza Encendida.",
+ s2t:"Recibe tu código", s2p:"Te darán un código exclusivo para huéspedes.",
+ s3t:"Compra tu entrada Premium", s3p:"Elige la entrada Premium e introduce tu código al pagar: se aplica un 20 % de descuento.",
+ tip:"Busca el distintivo «Alojamiento colaborador» en la recepción.",
+ citiesEyebrow:"Los espectáculos", citiesTitle:"Dos ciudades, dos experiencias",
+ sevCity:"Sevilla", sevTitle:"Carmen", sevVenue:"Real Alcázar de Sevilla", sevDates:"Del 30 de octubre de 2026 al 14 de marzo de 2027",
+ sevDesc:"La ópera de Bizet convertida en un recorrido nocturno de luz, música y emoción por los jardines del Real Alcázar.",
+ corCity:"Córdoba", corTitle:"Navegantes", corVenue:"Alcázar de los Reyes Cristianos", corDates:"Hasta el 10 de enero de 2027",
+ corDesc:"Un viaje de luz y música por los jardines del Alcázar, inspirado en el encuentro de Colón con los Reyes Católicos.",
+ dur:"Unos 45 minutos · pases cada 15 minutos",
+ btnPremium:"Comprar entrada Premium",
+ expEyebrow:"La experiencia", expTitle:"Hecho para tus fotos",
+ f1t:"Las mejores fotos de tu viaje", f1p:"Luz, color y proyecciones en jardines históricos: rincones pensados para fotografiar.",
+ f2t:"Sin barreras de idioma", f2p:"Es una experiencia visual. Hay algunos pasajes narrados en español e inglés, pero se disfruta sin entender ninguno.",
+ f3t:"Llueva o no", f3p:"Es al aire libre y se celebra con normalidad aunque llueva.",
+ share:"Etiqueta a {ig} y comparte tus fotos con nuestro hashtag. Las mejores aparecerán en nuestras redes.",
+ joinEyebrow:"Alojamientos colaboradores", joinTitle:"¿Tu alojamiento aún no participa?",
+ joinSub:"Pide en recepción que se una: para ellos es gratis y así podrás disfrutar del descuento.",
+ guestWho:"Si eres huésped", guestTitle:"Pide que se unan",
+ guestText:"Enseña este mensaje en recepción. Unirse es gratis para el alojamiento y solo tienen que entregarte un código.",
+ guestMsgBtn:"Mensaje para recepción",
+ hostWho:"Si gestionas un alojamiento", hostTitle:"Hazte alojamiento colaborador",
+ hostText:"Ofrece a tus huéspedes una ventaja que no encontrarán en otro sitio. Es gratis: solo tienes que entregar un código en recepción. Te enviamos el material.",
+ hostBtn:"Quiero ser colaborador",
+ faqTitle:"Preguntas frecuentes",
+ q1:"¿Qué incluye la entrada Premium?", a1:"Acceso a Naturaleza Encendida en una franja ampliada de 1 hora y acceso preferente sin colas. Con el código de huésped tienes un 20 % de descuento sobre su precio.",
+ q2:"¿Puedo conseguir el código si no me alojo en un colaborador?", a2:"El código es exclusivo para huéspedes de alojamientos colaboradores. Si el tuyo aún no participa, pide en recepción que se una: es gratis para ellos.",
+ q3:"¿Necesito saber español?", a3:"No. Es una experiencia principalmente visual; los pocos pasajes narrados están en español e inglés.",
+ q4:"¿Se pueden hacer fotos?", a4:"Sí, fotos y vídeos personales. Durante el recorrido hay láseres: no apuntes la cámara hacia ellos, porque pueden dañar el sensor. También hay luces estroboscópicas.",
+ q5:"Tengo un alojamiento, ¿cuánto cuesta unirse?", a5:"Nada. Solo tienes que entregar el código a tus huéspedes. Escríbenos y te enviamos el material para recepción.",
+ modalTitle:"Enséñalo en recepción", modalHint:"Muestra esta pantalla al personal de tu alojamiento.",
+ copy:"Copiar", copied:"¡Copiado!", close:"Cerrar", presents:"Presenta",
+ buyEyebrow:"Paso a paso",
+ buyTitle:"Cómo comprar con tu código",
+ b1:"Pulsa «Comprar entrada Premium» en tu ciudad: Sevilla o Córdoba.",
+ b2:"Elige el día, la hora y el número de entradas, y pulsa «Comprar ahora».",
+ b3:"Inicia sesión o elige «Continúa como invitado».",
+ b4:"Rellena tus datos de contacto: nombre, apellidos y email.",
+ b5:"En «Cupón o tarjeta regalo» escribe el código de tu alojamiento y aplícalo: verás el 20 % descontado.",
+ b6:"Elige cómo pagar (tarjeta, PayPal o Bizum) y confirma. Recibirás las entradas por email.",
+ buyNote:"Tienes unos 10 minutos para completar la compra.",
+ priceTpl:"Premium {p} → {d} con tu código",
+ sevGift:"Incluye una taza de Naturaleza Encendida",
+ feeTpl:"+ {f} de gastos de gestión por entrada"
+},
+en:{
+ badge:"For guests: 20% off Premium",
+ heroKicker:"Seville · Córdoba",
+ heroTitle:"20% off the Premium ticket",
+ heroSub:"An exclusive perk for guests of partner accommodations. Ask for your code at reception.",
+ ctaHow:"How to get it", ctaCities:"See the shows",
+ tktEyebrow:"Guest perk", tktTitle:"Premium, 20% off",  prem:"PREMIUM TICKET",
+ inc1:"Entry to Naturaleza Encendida",  inc2p:"Entry in extended 1-hour time slots", inc3:"Priority access, no queues",
+ howEyebrow:"How it works", howTitle:"Three easy steps",
+ s1t:"Ask at reception", s1p:"Ask whether your hotel, hostel or apartment is a Naturaleza Encendida partner.",
+ s2t:"Get your code", s2p:"They'll give you an exclusive guest code.",
+ s3t:"Book your Premium ticket", s3p:"Choose the Premium ticket and enter your code at checkout to get 20% off.",
+ tip:"Look for the “Partner accommodation” sign at reception.",
+ citiesEyebrow:"The shows", citiesTitle:"Two cities, two experiences",
+ sevCity:"Seville", sevTitle:"Carmen", sevVenue:"Real Alcázar of Seville", sevDates:"30 October 2026 – 14 March 2027",
+ sevDesc:"Bizet's opera reimagined as a night-time journey of light, music and emotion through the gardens of the Real Alcázar.",
+ corCity:"Córdoba", corTitle:"Navegantes", corVenue:"Alcázar de los Reyes Cristianos", corDates:"Until 10 January 2027",
+ corDesc:"A journey of light and music through the Alcázar gardens, inspired by Columbus's meeting with the Catholic Monarchs.",
+ dur:"About 45 minutes · entry every 15 minutes",
+ btnPremium:"Buy Premium ticket",
+ expEyebrow:"The experience", expTitle:"Made for your photos",
+ f1t:"The best photos of your trip", f1p:"Light, colour and projections in historic gardens — spots made to be photographed.",
+ f2t:"No language barrier", f2p:"It's a visual experience. A few passages are narrated in Spanish and English, but you can enjoy it without understanding either.",
+ f3t:"Rain or shine", f3p:"It's outdoors and goes ahead as normal even if it rains.",
+ share:"Tag {ig} and share your photos with our hashtag. The best ones will be featured on our social media.",
+ joinEyebrow:"Partner accommodations", joinTitle:"Is your accommodation not a partner yet?",
+ joinSub:"Ask reception to join: it's free for them, and you'll get the discount.",
+ guestWho:"If you're a guest", guestTitle:"Ask them to join",
+ guestText:"Show this message at reception. Joining is free for the accommodation — they just hand you a code.",
+ guestMsgBtn:"Message for reception",
+ hostWho:"If you run an accommodation", hostTitle:"Become a partner accommodation",
+ hostText:"Offer your guests a perk they won't find anywhere else. It's free — you just hand out a code at reception. We'll send you the materials.",
+ hostBtn:"I want to join",
+ faqTitle:"FAQ",
+ q1:"What does the Premium ticket include?", a1:"Entry to Naturaleza Encendida within an extended 1-hour time slot and priority access with no queues. With the guest code, you get 20% off its price.",
+ q2:"Can I get the code if I'm not staying at a partner?", a2:"The code is exclusive to guests of partner accommodations. If yours isn't a partner yet, ask reception to join — it's free for them.",
+ q3:"Do I need to speak Spanish?", a3:"No. It's mainly a visual experience; the few narrated passages are in Spanish and English.",
+ q4:"Can I take photos?", a4:"Yes, personal photos and videos are allowed. There are lasers along the route: don't point your camera at them, as they can damage the sensor. There are also strobe lights.",
+ q5:"I run an accommodation — how much does it cost to join?", a5:"Nothing. You just give the code to your guests. Write to us and we'll send you the reception materials.",
+ modalTitle:"Show this at reception", modalHint:"Show this screen to your accommodation's staff.",
+ copy:"Copy", copied:"Copied!", close:"Close", presents:"Presented by",
+ buyEyebrow:"Step by step",
+ buyTitle:"How to book with your code",
+ b1:"Tap “Buy Premium ticket” for your city: Seville or Córdoba.",
+ b2:"Choose the day, time and number of tickets, then continue to checkout.",
+ b3:"Log in, or continue as a guest.",
+ b4:"Fill in your contact details: name, surname and email.",
+ b5:"In the coupon or gift card field, enter your accommodation’s code and apply it: you’ll see the 20% discount.",
+ b6:"Choose how to pay (card, PayPal or Bizum) and confirm. Your tickets arrive by email.",
+ buyNote:"You have about 10 minutes to complete the purchase.",
+ priceTpl:"Premium {p} → {d} with your code",
+ sevGift:"Includes a Naturaleza Encendida mug",
+ feeTpl:"+ {f} booking fee per ticket"
+},
+fr:{
+ badge:"Pour les clients : -20 % sur le billet Premium",
+ heroKicker:"Séville · Cordoue",
+ heroTitle:"-20 % sur le billet Premium",
+ heroSub:"Un avantage exclusif pour les clients des hébergements partenaires. Demandez votre code à la réception.",
+ ctaHow:"Comment l’obtenir", ctaCities:"Voir les spectacles",
+ tktEyebrow:"Avantage clients", tktTitle:"Le Premium à -20 %",  prem:"BILLET PREMIUM",
+ inc1:"Entrée à Naturaleza Encendida",  inc2p:"Accès par créneaux élargis d’1 heure", inc3:"Accès prioritaire sans file d’attente",
+ howEyebrow:"Comment ça marche", howTitle:"Trois étapes simples",
+ s1t:"Demandez à la réception", s1p:"Demandez si votre hôtel, auberge ou appartement est un hébergement partenaire de Naturaleza Encendida.",
+ s2t:"Recevez votre code", s2p:"On vous remettra un code exclusif réservé aux clients.",
+ s3t:"Réservez votre billet Premium", s3p:"Choisissez le billet Premium et saisissez votre code au paiement pour bénéficier de 20 % de réduction.",
+ tip:"Repérez le macaron « Hébergement partenaire » à la réception.",
+ citiesEyebrow:"Les spectacles", citiesTitle:"Deux villes, deux expériences",
+ sevCity:"Séville", sevTitle:"Carmen", sevVenue:"Real Alcázar de Séville", sevDates:"Du 30 octobre 2026 au 14 mars 2027",
+ sevDesc:"L’opéra de Bizet transformé en un parcours nocturne de lumière, de musique et d’émotion dans les jardins du Real Alcázar.",
+ corCity:"Cordoue", corTitle:"Navegantes", corVenue:"Alcázar des Rois Chrétiens", corDates:"Jusqu’au 10 janvier 2027",
+ corDesc:"Un voyage de lumière et de musique dans les jardins de l’Alcázar, inspiré de la rencontre de Christophe Colomb avec les Rois Catholiques.",
+ dur:"Environ 45 minutes · départs toutes les 15 minutes",
+ btnPremium:"Acheter le billet Premium",
+ expEyebrow:"L’expérience", expTitle:"Pensé pour vos photos",
+ f1t:"Les plus belles photos de votre voyage", f1p:"Lumière, couleurs et projections dans des jardins historiques : des lieux faits pour être photographiés.",
+ f2t:"Aucune barrière de langue", f2p:"C’est une expérience visuelle. Quelques passages sont narrés en espagnol et en anglais, mais on l’apprécie sans comprendre ni l’un ni l’autre.",
+ f3t:"Qu’il pleuve ou non", f3p:"Le spectacle a lieu en plein air et se déroule normalement même sous la pluie.",
+ share:"Identifiez {ig} et partagez vos photos avec notre hashtag. Les meilleures seront publiées sur nos réseaux.",
+ joinEyebrow:"Hébergements partenaires", joinTitle:"Votre hébergement ne participe pas encore ?",
+ joinSub:"Demandez à la réception d’adhérer : c’est gratuit pour eux, et vous profiterez de la réduction.",
+ guestWho:"Vous êtes client", guestTitle:"Demandez-leur d’adhérer",
+ guestText:"Montrez ce message à la réception. L’adhésion est gratuite pour l’hébergement : il suffit de vous remettre un code.",
+ guestMsgBtn:"Message pour la réception",
+ hostWho:"Vous gérez un hébergement", hostTitle:"Devenez hébergement partenaire",
+ hostText:"Offrez à vos clients un avantage introuvable ailleurs. C’est gratuit : il suffit de remettre un code à la réception. Nous vous envoyons le matériel.",
+ hostBtn:"Je veux devenir partenaire",
+ faqTitle:"Questions fréquentes",
+ q1:"Que comprend le billet Premium ?", a1:"L’entrée à Naturaleza Encendida sur un créneau élargi d’1 heure et un accès prioritaire sans file d’attente. Avec le code client, vous bénéficiez de 20 % de réduction sur son prix.",
+ q2:"Puis-je obtenir le code si je ne loge pas chez un partenaire ?", a2:"Le code est réservé aux clients des hébergements partenaires. Si le vôtre ne participe pas encore, demandez à la réception d’adhérer : c’est gratuit pour eux.",
+ q3:"Faut-il parler espagnol ?", a3:"Non. C’est avant tout une expérience visuelle ; les rares passages narrés sont en espagnol et en anglais.",
+ q4:"Peut-on prendre des photos ?", a4:"Oui, les photos et vidéos personnelles sont autorisées. Le parcours comporte des lasers : ne pointez pas votre appareil vers eux, ils peuvent endommager le capteur. Il y a aussi des lumières stroboscopiques.",
+ q5:"Je gère un hébergement : combien coûte l’adhésion ?", a5:"Rien. Il suffit de remettre le code à vos clients. Écrivez-nous et nous vous enverrons le matériel pour la réception.",
+ modalTitle:"Montrez-le à la réception", modalHint:"Montrez cet écran au personnel de votre hébergement.",
+ copy:"Copier", copied:"Copié !", close:"Fermer", presents:"Présenté par",
+ buyEyebrow:"Étape par étape",
+ buyTitle:"Comment acheter avec votre code",
+ b1:"Touchez « Acheter le billet Premium » pour votre ville : Séville ou Cordoue.",
+ b2:"Choisissez le jour, l’heure et le nombre de billets, puis passez au paiement.",
+ b3:"Connectez-vous ou continuez en tant qu’invité.",
+ b4:"Saisissez vos coordonnées : nom, prénom et e-mail.",
+ b5:"Dans le champ coupon ou carte cadeau, saisissez le code de votre hébergement et appliquez-le : la réduction de 20 % s’affiche.",
+ b6:"Choisissez le mode de paiement (carte, PayPal ou Bizum) et confirmez. Vos billets arrivent par e-mail.",
+ buyNote:"Vous avez environ 10 minutes pour finaliser l’achat.",
+ priceTpl:"Premium {p} → {d} avec votre code",
+ sevGift:"Comprend une tasse Naturaleza Encendida",
+ feeTpl:"+ {f} de frais de gestion par billet"
+},
+de:{
+ badge:"Für Gäste: 20 % Rabatt auf Premium",
+ heroKicker:"Sevilla · Córdoba",
+ heroTitle:"20 % Rabatt auf das Premium-Ticket",
+ heroSub:"Ein exklusiver Vorteil für Gäste unserer Partnerunterkünfte. Fragen Sie an der Rezeption nach Ihrem Code.",
+ ctaHow:"So funktioniert’s", ctaCities:"Zu den Shows",
+ tktEyebrow:"Gästevorteil", tktTitle:"Premium mit 20 % Rabatt",  prem:"PREMIUM-TICKET",
+ inc1:"Eintritt zu Naturaleza Encendida",  inc2p:"Einlass in erweiterten 1-Stunden-Zeitfenstern", inc3:"Bevorzugter Einlass ohne Warteschlange",
+ howEyebrow:"So funktioniert’s", howTitle:"Drei einfache Schritte",
+ s1t:"An der Rezeption fragen", s1p:"Fragen Sie, ob Ihr Hotel, Hostel oder Apartment eine Partnerunterkunft von Naturaleza Encendida ist.",
+ s2t:"Code erhalten", s2p:"Sie erhalten einen exklusiven Gästecode.",
+ s3t:"Premium-Ticket buchen", s3p:"Wählen Sie das Premium-Ticket und geben Sie beim Bezahlen Ihren Code ein: Sie erhalten 20 % Rabatt.",
+ tip:"Achten Sie an der Rezeption auf das Schild „Partnerunterkunft“.",
+ citiesEyebrow:"Die Shows", citiesTitle:"Zwei Städte, zwei Erlebnisse",
+ sevCity:"Sevilla", sevTitle:"Carmen", sevVenue:"Real Alcázar von Sevilla", sevDates:"30. Oktober 2026 – 14. März 2027",
+ sevDesc:"Bizets Oper als nächtlicher Rundgang voller Licht, Musik und Emotionen durch die Gärten des Real Alcázar.",
+ corCity:"Córdoba", corTitle:"Navegantes", corVenue:"Alcázar de los Reyes Cristianos", corDates:"Bis 10. Januar 2027",
+ corDesc:"Eine Reise aus Licht und Musik durch die Gärten des Alcázar, inspiriert vom Treffen zwischen Kolumbus und den Katholischen Königen.",
+ dur:"Ca. 45 Minuten · Einlass alle 15 Minuten",
+ btnPremium:"Premium-Ticket kaufen",
+ expEyebrow:"Das Erlebnis", expTitle:"Wie gemacht für Ihre Fotos",
+ f1t:"Die schönsten Fotos Ihrer Reise", f1p:"Licht, Farben und Projektionen in historischen Gärten – Orte, die zum Fotografieren gemacht sind.",
+ f2t:"Keine Sprachbarriere", f2p:"Es ist ein visuelles Erlebnis. Einige Passagen werden auf Spanisch und Englisch erzählt, aber man kann es genießen, ohne eine der beiden Sprachen zu verstehen.",
+ f3t:"Bei jedem Wetter", f3p:"Die Show findet im Freien statt – auch bei Regen.",
+ share:"Markieren Sie {ig} und teilen Sie Ihre Fotos mit unserem Hashtag. Die besten zeigen wir auf unseren Kanälen.",
+ joinEyebrow:"Partnerunterkünfte", joinTitle:"Ihre Unterkunft ist noch kein Partner?",
+ joinSub:"Bitten Sie die Rezeption, mitzumachen: Für die Unterkunft ist es kostenlos, und Sie erhalten den Rabatt.",
+ guestWho:"Für Gäste", guestTitle:"Bitten Sie um Teilnahme",
+ guestText:"Zeigen Sie diese Nachricht an der Rezeption. Die Teilnahme ist für die Unterkunft kostenlos – sie gibt Ihnen nur einen Code.",
+ guestMsgBtn:"Nachricht für die Rezeption",
+ hostWho:"Für Unterkünfte", hostTitle:"Partnerunterkunft werden",
+ hostText:"Bieten Sie Ihren Gästen einen Vorteil, den sie nirgendwo sonst bekommen. Kostenlos – Sie geben an der Rezeption nur einen Code weiter. Wir senden Ihnen das Material.",
+ hostBtn:"Partner werden",
+ faqTitle:"Häufige Fragen",
+ q1:"Was beinhaltet das Premium-Ticket?", a1:"Eintritt zu Naturaleza Encendida in einem erweiterten 1-Stunden-Zeitfenster und bevorzugten Einlass ohne Warteschlange. Mit dem Gästecode erhalten Sie 20 % Rabatt auf den Preis.",
+ q2:"Bekomme ich den Code auch ohne Partnerunterkunft?", a2:"Der Code ist exklusiv für Gäste von Partnerunterkünften. Ist Ihre Unterkunft noch kein Partner, bitten Sie die Rezeption mitzumachen – es ist kostenlos.",
+ q3:"Muss ich Spanisch sprechen?", a3:"Nein. Es ist vor allem ein visuelles Erlebnis; die wenigen erzählten Passagen sind auf Spanisch und Englisch.",
+ q4:"Darf man fotografieren?", a4:"Ja, private Fotos und Videos sind erlaubt. Auf dem Rundgang gibt es Laser: Richten Sie Ihre Kamera nicht darauf, da sie den Sensor beschädigen können. Außerdem gibt es Stroboskoplicht.",
+ q5:"Ich betreibe eine Unterkunft – was kostet die Teilnahme?", a5:"Nichts. Sie geben Ihren Gästen einfach den Code. Schreiben Sie uns, und wir senden Ihnen das Material für die Rezeption.",
+ modalTitle:"An der Rezeption zeigen", modalHint:"Zeigen Sie diesen Bildschirm dem Personal Ihrer Unterkunft.",
+ copy:"Kopieren", copied:"Kopiert!", close:"Schließen", presents:"Präsentiert von",
+ buyEyebrow:"Schritt für Schritt",
+ buyTitle:"So buchen Sie mit Ihrem Code",
+ b1:"Tippen Sie bei Ihrer Stadt auf „Premium-Ticket kaufen“: Sevilla oder Córdoba.",
+ b2:"Wählen Sie Tag, Uhrzeit und Anzahl der Tickets und gehen Sie weiter zur Kasse.",
+ b3:"Melden Sie sich an oder fahren Sie als Gast fort.",
+ b4:"Geben Sie Ihre Kontaktdaten ein: Vorname, Nachname und E-Mail.",
+ b5:"Geben Sie im Feld für Gutschein oder Geschenkkarte den Code Ihrer Unterkunft ein und wenden Sie ihn an: Der Rabatt von 20 % wird angezeigt.",
+ b6:"Wählen Sie die Zahlungsart (Karte, PayPal oder Bizum) und bestätigen Sie. Die Tickets kommen per E-Mail.",
+ buyNote:"Sie haben etwa 10 Minuten für den Kauf.",
+ priceTpl:"Premium {p} → {d} mit Ihrem Code",
+ sevGift:"Inklusive einer Naturaleza-Encendida-Tasse",
+ feeTpl:"+ {f} Servicegebühr pro Ticket"
+},
+it:{
+ badge:"Per gli ospiti: 20% di sconto sul Premium",
+ heroKicker:"Siviglia · Cordova",
+ heroTitle:"20% di sconto sul biglietto Premium",
+ heroSub:"Un vantaggio esclusivo per gli ospiti delle strutture partner. Chiedi il tuo codice alla reception.",
+ ctaHow:"Come ottenerlo", ctaCities:"Scopri gli spettacoli",
+ tktEyebrow:"Vantaggio per gli ospiti", tktTitle:"Premium con il 20% di sconto",  prem:"BIGLIETTO PREMIUM",
+ inc1:"Ingresso a Naturaleza Encendida",  inc2p:"Accesso in fasce orarie estese di 1 ora", inc3:"Accesso prioritario senza code",
+ howEyebrow:"Come funziona", howTitle:"Tre semplici passi",
+ s1t:"Chiedi alla reception", s1p:"Chiedi se il tuo hotel, ostello o appartamento è una struttura partner di Naturaleza Encendida.",
+ s2t:"Ricevi il tuo codice", s2p:"Ti daranno un codice esclusivo per gli ospiti.",
+ s3t:"Acquista il biglietto Premium", s3p:"Scegli il biglietto Premium e inserisci il codice al pagamento: avrai il 20% di sconto.",
+ tip:"Cerca il contrassegno «Struttura partner» alla reception.",
+ citiesEyebrow:"Gli spettacoli", citiesTitle:"Due città, due esperienze",
+ sevCity:"Siviglia", sevTitle:"Carmen", sevVenue:"Real Alcázar di Siviglia", sevDates:"Dal 30 ottobre 2026 al 14 marzo 2027",
+ sevDesc:"L’opera di Bizet trasformata in un percorso notturno di luce, musica ed emozioni nei giardini del Real Alcázar.",
+ corCity:"Cordova", corTitle:"Navegantes", corVenue:"Alcázar dei Re Cristiani", corDates:"Fino al 10 gennaio 2027",
+ corDesc:"Un viaggio di luce e musica nei giardini dell’Alcázar, ispirato all’incontro tra Cristoforo Colombo e i Re Cattolici.",
+ dur:"Circa 45 minuti · ingressi ogni 15 minuti",
+ btnPremium:"Acquista il biglietto Premium",
+ expEyebrow:"L’esperienza", expTitle:"Fatto per le tue foto",
+ f1t:"Le foto più belle del tuo viaggio", f1p:"Luce, colori e proiezioni in giardini storici: angoli pensati per essere fotografati.",
+ f2t:"Nessuna barriera linguistica", f2p:"È un’esperienza visiva. Alcuni passaggi sono narrati in spagnolo e in inglese, ma si può godere senza capire nessuna delle due lingue.",
+ f3t:"Con il sole o con la pioggia", f3p:"Si svolge all’aperto e va in scena regolarmente anche se piove.",
+ share:"Tagga {ig} e condividi le tue foto con il nostro hashtag. Le migliori appariranno sui nostri social.",
+ joinEyebrow:"Strutture partner", joinTitle:"La tua struttura non partecipa ancora?",
+ joinSub:"Chiedi alla reception di aderire: per loro è gratis e tu potrai avere lo sconto.",
+ guestWho:"Se sei un ospite", guestTitle:"Chiedi di aderire",
+ guestText:"Mostra questo messaggio alla reception. Aderire è gratis per la struttura: basta consegnarti un codice.",
+ guestMsgBtn:"Messaggio per la reception",
+ hostWho:"Se gestisci una struttura", hostTitle:"Diventa struttura partner",
+ hostText:"Offri ai tuoi ospiti un vantaggio che non troveranno altrove. È gratis: basta consegnare un codice alla reception. Ti inviamo noi il materiale.",
+ hostBtn:"Voglio diventare partner",
+ faqTitle:"Domande frequenti",
+ q1:"Cosa include il biglietto Premium?", a1:"L’ingresso a Naturaleza Encendida in una fascia oraria estesa di 1 ora e l’accesso prioritario senza code. Con il codice ospite hai il 20% di sconto sul prezzo.",
+ q2:"Posso avere il codice se non alloggio in una struttura partner?", a2:"Il codice è riservato agli ospiti delle strutture partner. Se la tua non partecipa ancora, chiedi alla reception di aderire: per loro è gratis.",
+ q3:"Serve sapere lo spagnolo?", a3:"No. È un’esperienza soprattutto visiva; i pochi passaggi narrati sono in spagnolo e in inglese.",
+ q4:"Si possono fare foto?", a4:"Sì, foto e video personali sono consentiti. Lungo il percorso ci sono dei laser: non puntare la fotocamera verso di essi, perché possono danneggiare il sensore. Sono presenti anche luci stroboscopiche.",
+ q5:"Gestisco una struttura: quanto costa aderire?", a5:"Niente. Basta consegnare il codice ai tuoi ospiti. Scrivici e ti invieremo il materiale per la reception.",
+ modalTitle:"Mostralo alla reception", modalHint:"Mostra questa schermata al personale della tua struttura.",
+ copy:"Copia", copied:"Copiato!", close:"Chiudi", presents:"Presentato da",
+ buyEyebrow:"Passo dopo passo",
+ buyTitle:"Come acquistare con il tuo codice",
+ b1:"Tocca «Acquista il biglietto Premium» della tua città: Siviglia o Cordova.",
+ b2:"Scegli giorno, orario e numero di biglietti e prosegui al pagamento.",
+ b3:"Accedi oppure continua come ospite.",
+ b4:"Inserisci i tuoi dati di contatto: nome, cognome ed e-mail.",
+ b5:"Nel campo coupon o carta regalo inserisci il codice della tua struttura e applicalo: vedrai lo sconto del 20%.",
+ b6:"Scegli come pagare (carta, PayPal o Bizum) e conferma. Riceverai i biglietti via e-mail.",
+ buyNote:"Hai circa 10 minuti per completare l’acquisto.",
+ priceTpl:"Premium {p} → {d} con il tuo codice",
+ sevGift:"Include una tazza Naturaleza Encendida",
+ feeTpl:"+ {f} di costi di gestione per biglietto"
+},
+zh:{
+ badge:"住客专享：高级票8折",
+ heroKicker:"塞维利亚 · 科尔多瓦",
+ heroTitle:"高级票享8折优惠",
+ heroSub:"合作住宿客人专享优惠。请在前台索取您的优惠码。",
+ ctaHow:"如何获取", ctaCities:"查看演出",
+ tktEyebrow:"住客专享", tktTitle:"高级票8折",  prem:"高级票",
+ inc1:"入场 Naturaleza Encendida",  inc2p:"1 小时延长时段入场", inc3:"优先入场，无需排队",
+ howEyebrow:"使用方法", howTitle:"简单三步",
+ s1t:"询问前台", s1p:"询问您入住的酒店、青年旅舍或公寓是否为 Naturaleza Encendida 的合作住宿。",
+ s2t:"获取优惠码", s2p:"前台将为您提供住客专属优惠码。",
+ s3t:"购买高级票", s3p:"选择高级票，付款时输入优惠码，即可享受8折优惠。",
+ tip:"请留意前台的“合作住宿”标识。",
+ citiesEyebrow:"演出", citiesTitle:"两座城市，两种体验",
+ sevCity:"塞维利亚", sevTitle:"Carmen 卡门", sevVenue:"塞维利亚王宫（Real Alcázar）", sevDates:"2026年10月30日 至 2027年3月14日",
+ sevDesc:"比才的歌剧《卡门》化身为一场穿越王宫花园的夜间光影、音乐与情感之旅。",
+ corCity:"科尔多瓦", corTitle:"Navegantes 航海家", corVenue:"科尔多瓦基督教君主城堡", corDates:"至 2027年1月10日",
+ corDesc:"以哥伦布与天主教双王的会面为灵感，在城堡花园中展开的一场光与音乐之旅。",
+ dur:"约 45 分钟 · 每 15 分钟一场",
+ btnPremium:"购买高级票",
+ expEyebrow:"体验", expTitle:"为拍照而生",
+ f1t:"旅途中最美的照片", f1p:"历史花园中的灯光、色彩与投影——处处都是拍照打卡点。",
+ f2t:"没有语言障碍", f2p:"这是一场视觉体验。部分段落有西班牙语和英语讲解，但不懂这两种语言也能尽情享受。",
+ f3t:"风雨无阻", f3p:"演出在户外举行，下雨也照常进行。",
+ share:"标记 {ig}，并用我们的话题标签分享您的照片。精选照片将在我们的社交媒体上展示。",
+ joinEyebrow:"合作住宿", joinTitle:"您的住宿还不是合作伙伴？",
+ joinSub:"请前台加入：对他们完全免费，您也能享受折扣。",
+ guestWho:"如果您是住客", guestTitle:"邀请他们加入",
+ guestText:"在前台出示这条信息。加入对住宿完全免费，只需为您提供一个优惠码。",
+ guestMsgBtn:"给前台的信息",
+ hostWho:"如果您经营住宿", hostTitle:"成为合作住宿",
+ hostText:"为您的客人提供独一无二的专属优惠。完全免费：只需在前台发放优惠码。我们会把宣传物料寄给您。",
+ hostBtn:"我想加入",
+ faqTitle:"常见问题",
+ q1:"高级票包含什么？", a1:"在 1 小时延长时段内进入 Naturaleza Encendida，并享受优先入场、无需排队。使用住客优惠码可享受8折优惠。",
+ q2:"不住合作住宿也能获得优惠码吗？", a2:"优惠码仅限合作住宿的住客使用。如果您的住宿尚未加入，请邀请前台加入——对他们完全免费。",
+ q3:"需要会说西班牙语吗？", a3:"不需要。这主要是一场视觉体验，少量讲解为西班牙语和英语。",
+ q4:"可以拍照吗？", a4:"可以拍摄个人照片和视频。沿途设有激光，请勿将相机对准激光，以免损坏传感器。现场还有频闪灯光。",
+ q5:"我经营住宿，加入需要费用吗？", a5:"完全免费。您只需将优惠码提供给住客。请给我们发邮件，我们会寄送前台物料。",
+ modalTitle:"请在前台出示", modalHint:"请向住宿工作人员出示此页面。",
+ copy:"复制", copied:"已复制！", close:"关闭", presents:"出品",
+ buyEyebrow:"购票步骤",
+ buyTitle:"如何使用优惠码购票",
+ b1:"在您所在城市点击“购买高级票”：塞维利亚或科尔多瓦。",
+ b2:"选择日期、时间和票数，然后前往结账。",
+ b3:"登录，或以访客身份继续。",
+ b4:"填写联系信息：名字、姓氏和电子邮箱。",
+ b5:"在“优惠券或礼品卡”栏输入住宿提供的优惠码并应用，即可看到8折优惠。",
+ b6:"选择付款方式（银行卡、PayPal 或 Bizum）并确认。门票将发送到您的邮箱。",
+ buyNote:"完成购票约有10分钟时间。",
+ priceTpl:"高级票 {p} → 使用优惠码 {d}",
+ sevGift:"附赠 Naturaleza Encendida 马克杯",
+ feeTpl:"每张票另加 {f} 手续费"
+},
+ja:{
+ badge:"宿泊者はプレミアム20%オフ",
+ heroKicker:"セビリア · コルドバ",
+ heroTitle:"プレミアムチケットが20%オフ",
+ heroSub:"提携宿泊施設のお客様だけの特典です。フロントでコードをお尋ねください。",
+ ctaHow:"入手方法", ctaCities:"公演を見る",
+ tktEyebrow:"宿泊者特典", tktTitle:"プレミアムが20%オフ",  prem:"プレミアムチケット",
+ inc1:"Naturaleza Encendida への入場",  inc2p:"1時間の拡大時間枠で入場", inc3:"優先入場・待ち時間なし",
+ howEyebrow:"ご利用方法", howTitle:"かんたん3ステップ",
+ s1t:"フロントで確認", s1p:"ご宿泊のホテル、ホステル、アパートメントが Naturaleza Encendida の提携施設かどうかお尋ねください。",
+ s2t:"コードを受け取る", s2p:"宿泊者専用のコードをお渡しします。",
+ s3t:"プレミアムチケットを購入", s3p:"プレミアムチケットを選び、お支払い時にコードを入力すると20%割引になります。",
+ tip:"フロントの「提携宿泊施設」マークが目印です。",
+ citiesEyebrow:"公演", citiesTitle:"2つの街、2つの体験",
+ sevCity:"セビリア", sevTitle:"Carmen カルメン", sevVenue:"セビリア王宮（Real Alcázar）", sevDates:"2026年10月30日〜2027年3月14日",
+ sevDesc:"ビゼーのオペラ『カルメン』を、王宮の庭園をめぐる光と音楽と感情の夜の旅として表現します。",
+ corCity:"コルドバ", corTitle:"Navegantes 航海者", corVenue:"キリスト教両王のアルカサル", corDates:"2027年1月10日まで",
+ corDesc:"コロンブスとカトリック両王の出会いに着想を得た、アルカサル庭園をめぐる光と音楽の旅。",
+ dur:"所要約45分 · 15分ごとに入場",
+ btnPremium:"プレミアムチケットを購入",
+ expEyebrow:"体験", expTitle:"写真映え間違いなし",
+ f1t:"旅でいちばんの写真を", f1p:"歴史ある庭園を彩る光、色、プロジェクション。どこを撮っても絵になります。",
+ f2t:"言葉の壁なし", f2p:"視覚で楽しむ体験です。一部スペイン語と英語のナレーションがありますが、言葉がわからなくても十分楽しめます。",
+ f3t:"雨でも開催", f3p:"屋外での開催で、雨天でも通常どおり行われます。",
+ share:"{ig} をタグ付けし、ハッシュタグを付けて写真をシェアしてください。素敵な写真は公式SNSでご紹介します。",
+ joinEyebrow:"提携宿泊施設", joinTitle:"ご宿泊先がまだ提携していませんか？",
+ joinSub:"フロントに参加を勧めてください。施設側は無料で、あなたも割引を受けられます。",
+ guestWho:"宿泊者の方", guestTitle:"参加を勧める",
+ guestText:"このメッセージをフロントでお見せください。施設の参加は無料で、コードをお渡しいただくだけです。",
+ guestMsgBtn:"フロント用メッセージ",
+ hostWho:"宿泊施設の方", hostTitle:"提携宿泊施設になる",
+ hostText:"お客様にここだけの特典を。参加は無料で、フロントでコードをお渡しいただくだけです。必要な資料はこちらからお送りします。",
+ hostBtn:"提携を申し込む",
+ faqTitle:"よくある質問",
+ q1:"プレミアムチケットの内容は？", a1:"1時間の拡大時間枠での Naturaleza Encendida への入場と、待ち時間なしの優先入場です。宿泊者コードを使うと20%割引でご購入いただけます。",
+ q2:"提携施設に泊まっていなくてもコードはもらえますか？", a2:"コードは提携宿泊施設のお客様専用です。ご宿泊先が未提携の場合は、フロントに参加を勧めてください。施設側は無料です。",
+ q3:"スペイン語ができなくても大丈夫？", a3:"大丈夫です。主に視覚で楽しむ体験で、わずかなナレーションはスペイン語と英語です。",
+ q4:"写真撮影はできますか？", a4:"個人的な写真・動画の撮影は可能です。ルート上にはレーザーがあり、センサーを傷める恐れがあるためカメラを向けないでください。ストロボ照明もあります。",
+ q5:"宿泊施設の参加費用は？", a5:"無料です。お客様にコードをお渡しいただくだけです。ご連絡いただければ、フロント用の資料をお送りします。",
+ modalTitle:"フロントでお見せください", modalHint:"この画面を宿泊施設のスタッフにお見せください。",
+ copy:"コピー", copied:"コピーしました！", close:"閉じる", presents:"提供",
+ buyEyebrow:"購入の流れ",
+ buyTitle:"コードを使った購入方法",
+ b1:"ご滞在の街（セビリアまたはコルドバ）の「プレミアムチケットを購入」をタップします。",
+ b2:"日付・時間・枚数を選び、お支払い画面へ進みます。",
+ b3:"ログインするか、ゲストとして続行します。",
+ b4:"連絡先（名前・姓・メールアドレス）を入力します。",
+ b5:"「クーポンまたはギフトカード」欄に宿泊先のコードを入力して適用すると、20%割引が表示されます。",
+ b6:"支払い方法（カード、PayPal、Bizum）を選んで確定します。チケットはメールで届きます。",
+ buyNote:"購入手続きの制限時間は約10分です。",
+ priceTpl:"プレミアム {p} → コード利用で {d}",
+ sevGift:"Naturaleza Encendida マグカップ付き",
+ feeTpl:"1枚につき手数料 {f} が別途かかります"
+}
+};
+
+/* Mensaje para recepción: siempre en español (personal) + inglés */
+const MSG_ES = e => `Hola, Naturaleza Encendida tiene un programa <b>gratuito</b> para alojamientos: sus huéspedes consiguen un 20 % de descuento en la entrada Premium. ¿Podríais uniros? Basta con escribir a <b>${e}</b>.`;
+const MSG_EN = e => `Hi! Naturaleza Encendida has a <b>free</b> programme for accommodations: guests get 20% off the Premium ticket. Could you join? Just email <b>${e}</b>.`;
+
+/* Email de adhesión (los alojamientos son españoles: siempre en español) */
+const MAIL_SUBJECT = "Quiero ser alojamiento colaborador – Naturaleza Encendida";
+const MAIL_BODY = "Hola,\n\nQueremos adherirnos como alojamiento colaborador de Naturaleza Encendida.\n\nNombre del alojamiento:\nTipo (hotel / hostel / apartamento / vivienda turística):\nCiudad (Sevilla / Córdoba):\nPersona de contacto:\nTeléfono:\n\nGracias.";
+
+/* =========================================================
+   LÓGICA
+   ========================================================= */
+const LANGS = Object.keys(T);
+function detectLang(){
+  const q = new URLSearchParams(location.search).get("lang");   // ?lang=de para los anuncios en alemán, etc.
+  if (q && LANGS.includes(q)) return q;
+  for (const l of (navigator.languages || [navigator.language || "es"])) {
+    const c = (l || "").slice(0,2).toLowerCase();
+    if (LANGS.includes(c)) return c;
+  }
+  return "en";
+}
+let lang = detectLang();
+const sel = document.getElementById("langSel");
+
+function render(){
+  const t = T[lang];
+  document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
+  sel.value = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = t[el.dataset.i18n]; if (typeof v === "string") el.textContent = v;
+  });
+  document.querySelectorAll("[data-link]").forEach(a => a.href = CONFIG.links[a.dataset.link]);
+  document.querySelector(".js-hashtag").textContent = CONFIG.hashtag;
+  document.querySelector(".js-citytags").textContent = CONFIG.cityTags;
+  const loc = {es:"es-ES",en:"en-GB",fr:"fr-FR",de:"de-DE",it:"it-IT",zh:"zh-CN",ja:"ja-JP"}[lang];
+  const fmt = n => new Intl.NumberFormat(loc,{style:"currency",currency:"EUR"}).format(n);
+  document.querySelectorAll(".js-price").forEach(el => {
+    const p = CONFIG.prices[el.dataset.city];
+    const f = CONFIG.fees[el.dataset.city];
+    el.innerHTML = t.priceTpl.replace("{p}", "<s>"+fmt(p)+"</s>").replace("{d}", fmt(Math.round(p*(1-CONFIG.discount)*100)/100))
+      + (f ? '<br><small style="font-weight:500;opacity:.8">' + t.feeTpl.replace("{f}", fmt(f)) + '</small>' : '');
+  });
+  document.querySelector(".js-share").innerHTML = t.share.replace("{ig}", '<a href="https://www.instagram.com/naturaleza_encendida/" target="_blank" rel="noopener">@naturaleza_encendida</a>');
+  document.querySelectorAll(".js-join").forEach(a => a.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(MAIL_SUBJECT)}&body=${encodeURIComponent(MAIL_BODY)}`);
+  const em = document.querySelector(".js-email"); em.href = `mailto:${CONFIG.email}`; em.textContent = CONFIG.email;
+  document.querySelector(".js-msg-es").innerHTML = MSG_ES(CONFIG.email);
+  document.querySelector(".js-msg-en").innerHTML = MSG_EN(CONFIG.email);
+}
+sel.addEventListener("change", () => { lang = sel.value; render(); });
+
+const dlg = document.getElementById("msgDialog");
+document.getElementById("openMsg").addEventListener("click", () => dlg.showModal());
+document.getElementById("closeMsg").addEventListener("click", () => dlg.close());
+document.getElementById("copyMsg").addEventListener("click", async e => {
+  const txt = document.querySelector(".js-msg-es").innerText + "\n\n" + document.querySelector(".js-msg-en").innerText;
+  try { await navigator.clipboard.writeText(txt); e.target.textContent = T[lang].copied; setTimeout(render, 1500); } catch (_) {}
+});
+/* Vídeo de cabecera solo en ordenador (en móvil se queda la foto, para no gastar datos) */
+(function(){
+  const c = navigator.connection || {};
+  if (window.innerWidth < 900 || c.saveData || /2g/.test(c.effectiveType || "")) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const v = document.createElement("video");
+  Object.assign(v, {muted:true, loop:true, autoplay:true, playsInline:true});
+  v.setAttribute("aria-hidden","true");
+  const s = document.createElement("source");
+  s.src = "https://www.naturalezaencendida.com/wp-content/uploads/2026/09/Ne-Carmen-1440X460-1_qc38.webm"; s.type = "video/webm";
+  v.appendChild(s);
+  document.querySelector(".hero").prepend(v);
+})();
+render();
+</script>
+</body>
+</html>
